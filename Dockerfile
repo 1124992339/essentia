@@ -12,7 +12,7 @@ RUN sed -i 's/^Components: main/Components: main universe multiverse restricted/
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y --no-install-recommends \
-    build-essential git python3-dev pkg-config \
+    build-essential git python3-dev python3-setuptools pkg-config \
     libeigen3-dev libfftw3-dev libavcodec-dev libavformat-dev \
     libavutil-dev libswresample-dev libsamplerate0-dev libtag1-dev libyaml-dev \
     libchromaprint-dev ca-certificates && \

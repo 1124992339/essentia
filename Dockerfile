@@ -22,7 +22,7 @@ RUN ARCH=$(uname -m) && \
         libavutil-dev libswresample-dev libsamplerate0-dev libtag-dev \
         libyaml-dev libchromaprint-dev && \
         update-ca-certificates --fresh && \
-        pip install setuptools && \
+        pip install setuptools numpy && \
         mkdir -p /tmp/build && cd /tmp/build && \
         git clone --depth 1 https://github.com/MTG/essentia.git && \
         cd essentia && \
@@ -30,14 +30,14 @@ RUN ARCH=$(uname -m) && \
         python3 waf -j$(nproc) && \
         python3 waf install && \
         ldconfig && \
+        pip install six pyyaml && \
         cd / && rm -rf /tmp/build && \
         apt-get remove -y build-essential python3-dev python3-setuptools pkg-config git \
         libeigen3-dev libfftw3-dev libavcodec-dev libavformat-dev \
         libavutil-dev libswresample-dev libsamplerate0-dev libtag-dev \
         libyaml-dev libchromaprint-dev && \
         apt-get autoremove -y && \
-        rm -rf /var/lib/apt/lists/* && \
-        pip install --no-cache-dir numpy; \
+        rm -rf /var/lib/apt/lists/*; \
     fi
 
 ENV PYTHONPATH=/usr/local/lib/python3/dist-packages

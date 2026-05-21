@@ -7,7 +7,7 @@ RUN sed -i 's/^Components: main/Components: main universe multiverse restricted/
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     python3 python3-numpy python3-six python3-yaml python3-matplotlib \
     libavcodec60 libavformat60 libavutil58 libswresample4 \
-    libfftw3-3 libtag1v5 libsamplerate0 libchromaprint1 libyaml-0-2 && \
+    libfftw3-double3 libtag1v5 libsamplerate0 libchromaprint1 libyaml-0-2 && \
     rm -rf /var/lib/apt/lists/*
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \

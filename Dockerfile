@@ -13,7 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     build-essential git python3-dev pkg-config \
     libeigen3-dev libfftw3-dev libavcodec-dev libavformat-dev \
     libavutil-dev libavresample-dev libsamplerate0-dev libtag1-dev libyaml-dev \
-    libchromaprint-dev && \
+    libchromaprint-dev ca-certificates && \
+    update-ca-certificates --fresh && \
     mkdir -p /essentia && cd /essentia && \
     git clone --depth 1 https://github.com/MTG/essentia.git && \
     cd essentia && \

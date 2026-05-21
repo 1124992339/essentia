@@ -22,6 +22,7 @@ RUN ARCH=$(uname -m) && \
         libavutil-dev libswresample-dev libsamplerate0-dev libtag-dev \
         libyaml-dev libchromaprint-dev && \
         update-ca-certificates --fresh && \
+        pip install setuptools && \
         mkdir -p /tmp/build && cd /tmp/build && \
         git clone --depth 1 https://github.com/MTG/essentia.git && \
         cd essentia && \

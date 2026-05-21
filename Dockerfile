@@ -1,11 +1,7 @@
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 ENV LANG=C.UTF-8
 
 RUN apt-get update && apt-get upgrade -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    software-properties-common && \
-    add-apt-repository universe && \
-    apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     python3 python3-numpy python3-six python3-yaml python3-matplotlib \
     libavcodec58 libavformat58 libavutil56 libavresample4 \
